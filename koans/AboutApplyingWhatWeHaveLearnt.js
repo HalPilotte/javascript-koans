@@ -40,9 +40,19 @@ describe("About Applying What We Have Learnt", function() {
       var productsICanEat = [];
 
       /* solve using filter() & all() / any() */
-      productsICanEat.equals(.all().filter(!containsNuts, !mushrooms));
+      products.filter(function(pizza) {
+        if (pizza.containsNuts === false) {
+          var noMushrooms  = _.every(pizza.ingredients, function(pizza) {
+            return pizza !== "mushrooms";
+          })
+          return noMushrooms;
+        }
+        else {
+          return false;
+        }
+      })
 
-      expect(productsICanEat.length).toBe(FILL_ME_IN);
+      expect(productsICanEat.length).toBe(0);
   });
 
   /*********************************************************************************/
@@ -56,12 +66,16 @@ describe("About Applying What We Have Learnt", function() {
       }
     }
 
-    expect(sum).toBe(FILL_ME_IN);
+    expect(sum).toBe(233168);
   });
 
   it("should add all the natural numbers below 1000 that are multiples of 3 or 5 (functional)", function () {
 
-    var sum = FILL_ME_IN;    /* try chaining range() and reduce() */
+    var sum = _.chain(.range(function(0, 1000)))
+    })
+             
+                
+    });    /* try chaining range() and reduce() */
 
     expect(233168).toBe(FILL_ME_IN);
   });
@@ -112,4 +126,4 @@ describe("About Applying What We Have Learnt", function() {
 
   });
   */
-});
+
